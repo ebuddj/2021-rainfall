@@ -1,0 +1,5 @@
+- Renamed filenames to shorter ones
+- Removed trailing and leading whitespaces
+- Renamed column headers to Rainfall,Year,Month,ISO3
+- Removed country column while it has commas, ([A-Z]{1}[a-z]{2}),(.*),([A-Z]{3}) -> \1,\3
+- Removed word "Average" from month column

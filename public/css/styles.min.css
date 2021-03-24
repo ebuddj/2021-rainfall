@@ -1,0 +1,187 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:600.css);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* General styles */
+.clearfix___1yHqr {
+  zoom: 1;
+}
+.clearfix___1yHqr:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.ss-terms___dMEZ6 {
+  margin: 40px auto auto auto;
+  max-width: 450px;
+}
+.meta___3gcNx {
+  color: #333;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 0 10px 40px 10px;
+}
+.clear_both___a0DL_ {
+  clear: both;
+}
+.hidden___1aMNf {
+  display: none;
+}
+.nowrap___2n1o8 {
+  white-space: nowrap;
+}
+body {
+  overflow-y: hidden;
+}
+.app___2khK2 .map_container___22zRx {
+  font-size: 0;
+  display: block;
+}
+.app___2khK2 .map_container___22zRx svg {
+  height: 100vh;
+  width: 100%;
+}
+.app___2khK2 .meta_container___3p0xG {
+  color: #000;
+  font-family: Source Code Pro;
+  pointer-events: none;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  z-index: 1;
+}
+.app___2khK2 .meta_container___3p0xG .year_container___2v5FN {
+  -webkit-appearance: none;
+  font-size: 70px;
+  letter-spacing: 0.18em;
+  line-height: 65px;
+  text-align: center;
+}
+.app___2khK2 .meta_container___3p0xG .range_container___RQeFs {
+  display: none;
+  margin: 0 10px;
+}
+.app___2khK2 .meta_container___3p0xG .range_container___RQeFs input[type=range] {
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  pointer-events: auto;
+  width: 100%;
+}
+.app___2khK2 .meta_container___3p0xG .controls_container___20Jjq {
+  cursor: pointer;
+  display: none;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 5px;
+  pointer-events: auto;
+  text-align: center;
+}
+.app___2khK2 .meta_container___3p0xG .controls_container___20Jjq:hover {
+  color: #333;
+}
+.app___2khK2 .scales_container___1pYId {
+  bottom: 40%;
+  color: #fff;
+  font-family: Source Code Pro;
+  opacity: 1;
+  position: absolute;
+  right: 10px;
+  width: 60px;
+}
+.app___2khK2 .scales_container___1pYId:after,
+.app___2khK2 .scales_container___1pYId:before {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  text-align: center;
+  width: 60px;
+}
+.app___2khK2 .scales_container___1pYId:before {
+  content: '+10mm';
+  margin-top: 5px;
+  top: 0;
+}
+.app___2khK2 .scales_container___1pYId:after {
+  bottom: 0;
+  content: '-10mm';
+  margin-bottom: 5px;
+}
+.app___2khK2 .scales_container___1pYId .scale_container___3Z0k5 {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  height: 4px;
+  text-align: center;
+  width: 100%;
+}
+.app___2khK2 .scales_container___1pYId .scale_container___3Z0k5 .scale_text___3RxI7 {
+  display: block;
+  line-height: 24px;
+  position: relative;
+  top: -22px;
+}
+.app___2khK2 .scales_container___1pYId .scale_container___3Z0k5 .scale_text___3RxI7 .year_text___3ryI5 {
+  font-size: 18px;
+}
+.app___2khK2 .scales_container___1pYId .scale_container___3Z0k5 .scale_text_zero___20zq_,
+.app___2khK2 .scales_container___1pYId .scale_container___3Z0k5 .scale_text_1901___1gfLu {
+  color: #000;
+  font-size: 12px;
+  opacity: 0.5;
+  position: relative;
+  top: -2px;
+}
+.app___2khK2 .scales_container___1pYId .scale_container___3Z0k5 .scale_text_zero___20zq_ {
+  display: none;
+}
+

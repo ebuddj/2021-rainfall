@@ -1,0 +1,117 @@
+@import 'basics.less';
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:600.css');
+
+body {
+  overflow-y: hidden;
+}
+.app {
+  .map_container {
+    font-size: 0;
+    display: block;
+    svg {
+      height: 100vh;
+      width: 100%;
+      &.map {
+      }
+    }
+  }
+  @color: #000;
+  @opacity: 1;
+  .meta_container {
+    color: @color;
+    font-family: Source Code Pro;
+    pointer-events: none;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    z-index: 1;
+    .year_container {
+      -webkit-appearance: none;
+      font-size: 70px;
+      letter-spacing: 0.18em;
+      line-height: 65px;
+      text-align: center;
+    }
+    .range_container {
+      display: none;
+      margin: 0 10px;
+      input[type=range] {
+        box-sizing: border-box;
+        cursor: pointer;
+        font-size: 16px;
+        outline: none;
+        pointer-events: auto;
+        width: 100%;
+      }
+    }
+    .controls_container {
+      cursor: pointer;
+      display: none;
+      font-size: 32px;
+      font-weight: 600;
+      margin-top: 5px;
+      pointer-events: auto;
+      text-align: center;
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+  .scales_container {
+    bottom: 40%;
+    color: #fff;
+    font-family: Source Code Pro;
+    opacity: @opacity;
+    position: absolute;
+    right: 10px;
+    width: 60px;
+    &:after,
+    &:before {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      position: absolute;
+      text-align: center;
+      width: 60px;
+    }
+    &:before {
+      content: '+10mm';
+      margin-top: 5px;
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+      content: '-10mm';
+      margin-bottom: 5px;
+    }
+    .scale_container {
+      color: #000;
+      font-size: 14px;
+      font-weight: 600;
+      height: 4px;
+      text-align: center;
+      width: 100%;
+      .scale_text {
+        display: block;
+        line-height: 24px;
+        position: relative;
+        top: -22px;
+        .year_text {
+          font-size: 18px;
+        }
+      }
+      .scale_text_zero,
+      .scale_text_1901 {
+        color: #000;
+        font-size: 12px;
+        opacity: 0.5;
+        position: relative;
+        top: -2px;
+      }
+      .scale_text_zero {
+        display: none;
+      }
+    }
+  }
+}
