@@ -77,8 +77,28 @@ table {
 .nowrap___2n1o8 {
   white-space: nowrap;
 }
-body {
-  overflow-y: hidden;
+.app___2khK2 {
+  overflow: hidden;
+}
+.app___2khK2 .title_container___28dn4 {
+  margin-top: 20px;
+  margin-left: 20px;
+  position: absolute;
+}
+.app___2khK2 .title_container___28dn4 h3 {
+  font-size: 20pt;
+  margin-bottom: 5px;
+}
+.app___2khK2 .title_container___28dn4 .info_container___rDdFc {
+  font-size: 9pt;
+  margin-bottom: 5px;
+}
+.app___2khK2 .title_container___28dn4 .info_container___rDdFc a {
+  color: #000;
+  text-decoration: none;
+}
+.app___2khK2 .title_container___28dn4 .info_container___rDdFc a:hover {
+  text-decoration: underline;
 }
 .app___2khK2 .map_container___22zRx {
   font-size: 0;
@@ -105,8 +125,8 @@ body {
   text-align: center;
 }
 .app___2khK2 .meta_container___3p0xG .range_container___RQeFs {
-  display: none;
-  margin: 0 10px;
+  max-width: 600px;
+  margin: 10px auto;
 }
 .app___2khK2 .meta_container___3p0xG .range_container___RQeFs input[type=range] {
   box-sizing: border-box;
@@ -118,7 +138,6 @@ body {
 }
 .app___2khK2 .meta_container___3p0xG .controls_container___20Jjq {
   cursor: pointer;
-  display: none;
   font-size: 32px;
   font-weight: 600;
   margin-top: 5px;
