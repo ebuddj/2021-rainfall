@@ -2,11 +2,11 @@
 
 **Live demo** https://ebuddj.github.io/2021-rainfall/
 
-## Rainfall differences compared to the average per country from 1901 to 2016 (EBU)
+## Rainfall differences compared to the average per country from 1901 to 2020 (EBU)
 
 Global warming is the long-term rise in the average temperature of the Earth's climate system. While there have been prehistoric periods of global warming, many observed changes since the mid-20th century have been unprecedented over decades to millennia.
 
-This visualisation shows how the rainfall changes over time. Visualisation starts from year 1901 and ends to year 2016. In the animation you can see the difference to the average rainfall in that country. The average is calculated per country from years 1981–2010. Data comes from World Bank's Climate Knowledge Portal. Data can be used for non-commercial purposes.
+This visualisation shows how the rainfall changes over time. Visualisation starts from year 1901 and ends to year 2020. In the animation you can see the difference to the average rainfall in that country. The average is calculated per country from years 1981–2010. Data comes from World Bank's Climate Knowledge Portal. Data can be used for non-commercial purposes.
 
 The color scale goes from -10mm to +10mm. Larger anomalies are scaled to the nearest minimum or maximum on the scale meaning that if the anomality is for example -20mm it is visualised as it was -10mm. This is done so that the big local anomalies won't blur the big picture. The total average seen on the scale is the non-weighted avarage from all countries per year.  
 
