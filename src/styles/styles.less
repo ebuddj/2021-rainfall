@@ -2,10 +2,28 @@
 @import 'reset.css';
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700.css');
 
-body {
-  overflow-y: hidden;
-}
 .app {
+  overflow: hidden;
+  .title_container {
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+    h3 {
+      font-size: 20pt;
+      margin-bottom: 5px;
+    }
+    .info_container {
+      font-size: 9pt;
+      margin-bottom: 5px;
+      a {
+        color: #000;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
   .map_container {
     font-size: 0;
     display: block;
@@ -34,8 +52,9 @@ body {
       text-align: center;
     }
     .range_container {
-      display: none;
-      margin: 0 10px;
+      // display: none;
+      max-width: 600px;
+      margin: 10px auto;
       input[type=range] {
         box-sizing: border-box;
         cursor: pointer;
@@ -47,7 +66,7 @@ body {
     }
     .controls_container {
       cursor: pointer;
-      display: none;
+      // display: none;
       font-size: 32px;
       font-weight: 600;
       margin-top: 5px;

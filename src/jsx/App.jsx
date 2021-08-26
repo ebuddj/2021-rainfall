@@ -27,7 +27,6 @@ while (temperature > scaleMin) {
   scales.push(temperature);
 }
 
-// Use this to run three different versions (fullscreen, square and portrait)
 let g, interval;
 class App extends Component {
   constructor(props) {
@@ -56,7 +55,7 @@ class App extends Component {
   componentWillUnMount() {
 
   }
-  loadMapData() {
+  loadMapData() {
     d3.json('./data/world_countries.json').then(data => {
       this.drawMap(data)
     });
@@ -72,10 +71,10 @@ class App extends Component {
     const height = window.innerHeight - margin.top - margin.bottom;
     const svg = d3.select('.' + style.map_container)
       .append('svg')
-      .attr('height', height)
-      .attr('width', width)
+        .attr('height', height)
+        .attr('width', width)
       .append('g')
-      .attr('class', style.map);
+        .attr('class', style.map);
 
     // https://observablehq.com/@d3/robinson
     const path = d3.geoPath().projection(geoRobinson()
@@ -89,9 +88,7 @@ class App extends Component {
       .data(data.features)
       .enter().append('path')
         .attr('d', path)
-        .attr('fill', (d, i) => {
-          return this.value2color(0);
-        })
+        .attr('fill', (d, i) => this.value2color(0))
         .style('opacity', 1)
         .style('stroke', '#fff')
         .style('stroke-width', 0.3);
@@ -102,7 +99,7 @@ class App extends Component {
       this.toggleInterval(yearStart);
     }, 2000);
   }
-  toggleInterval(year) {
+  toggleInterval(year) {
     if (parseInt(year) === yearEnd) {
       year = yearStart
     }
@@ -131,7 +128,7 @@ class App extends Component {
             interval:true,
             year:year
           }), this.setPathColor);
-          year++
+          year++;
         }
       }, intervalTimeout);
     }
@@ -148,16 +145,11 @@ class App extends Component {
         let country_data = data.filter(obj => {
           return obj.country === d.id
         });
-        if (country_data[0]) {
-          return this.value2color(country_data[0].data);
-        }
-        else {
-          return this.value2color(0);
-        }
+        return (country_data[0]) ? this.value2color(country_data[0].data) : this.value2color(0);
       });
     this.getCurrentYearAverageTemp();
   }
-  getCurrentYearAverageTemp() {
+  getCurrentYearAverageTemp() {
     let temperature = this.state.current_data.reduce((total, current) => total + (current.data.reduce((country_total, country_current) => country_total + country_current.value, 0)) / current.data.length, 0) / this.state.current_data.length;
     this.setState((state, props) => ({
       active_country_temp:temperature,
@@ -185,6 +177,14 @@ class App extends Component {
     return (
       <div className={style.app}>
         <Div100vh>
+          <div className={style.title_container}>
+            <h3>Temperature anomalies</h3>
+            <div className={style.info_container}>
+              <div>Data: <a href="https://climateknowledgeportal.worldbank.org/download-data">World Bank</a></div>
+              <div>Author: <a href="https://twitter.com/teelmo">Teemo Tebest</a>, EBU</div>
+              <div>Reference period: 1951–1980</div>
+            </div>
+          </div>
           <div className={style.map_container}></div>
           <div className={style.meta_container}>
             <div className={style.year_container}>{this.state.year}</div>
