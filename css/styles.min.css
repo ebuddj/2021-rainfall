@@ -81,8 +81,9 @@ table {
   overflow: hidden;
 }
 .app___2khK2 .title_container___28dn4 {
-  margin-top: 20px;
+  font-family: Lato;
   margin-left: 20px;
+  margin-top: 20px;
   position: absolute;
 }
 .app___2khK2 .title_container___28dn4 h3 {
@@ -91,6 +92,7 @@ table {
 }
 .app___2khK2 .title_container___28dn4 .info_container___rDdFc {
   font-size: 9pt;
+  line-height: 12pt;
   margin-bottom: 5px;
 }
 .app___2khK2 .title_container___28dn4 .info_container___rDdFc a {
