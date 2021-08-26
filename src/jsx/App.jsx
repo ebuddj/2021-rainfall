@@ -14,12 +14,12 @@ import * as d3 from 'd3';
 import {geoRobinson} from 'd3-geo-projection';
 
 const yearStart = 1901,
-      yearEnd = 2016,
+      yearEnd = 2020,
       scaleMax = 10,
       scaleMin = -10,
       intervalTimeout = 300;
 // Use chroma to make the color scale.
-const f = chroma.scale('RdYlBu').padding([-0.35,-0.35]).domain([scaleMax,0,scaleMin]);
+const f = chroma.scale('RdYlBu').domain([scaleMax,0,scaleMin]);
 
 let scales = [], temperature = scaleMax;
 while (temperature > scaleMin) {
