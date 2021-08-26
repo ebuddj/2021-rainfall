@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:600.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700.css);
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -90,7 +90,7 @@ body {
 }
 .app___2khK2 .meta_container___3p0xG {
   color: #000;
-  font-family: Source Code Pro;
+  font-family: Lato;
   pointer-events: none;
   position: absolute;
   bottom: 10px;
@@ -131,7 +131,7 @@ body {
 .app___2khK2 .scales_container___1pYId {
   bottom: 40%;
   color: #fff;
-  font-family: Source Code Pro;
+  font-family: Lato;
   opacity: 1;
   position: absolute;
   right: 10px;
