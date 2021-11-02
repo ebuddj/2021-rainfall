@@ -21,10 +21,10 @@ const yearStart = 1901,
 // Use chroma to make the color scale.
 const f = chroma.scale('RdYlBu').domain([scaleMax,0,scaleMin]);
 
-let scales = [], temperature = scaleMax;
-while (temperature > scaleMin) {
-  temperature = temperature - 0.2;
-  scales.push(temperature);
+let scales = [], rainfall = scaleMax;
+while (rainfall > scaleMin) {
+  rainfall = rainfall - 0.2;
+  scales.push(rainfall);
 }
 
 let g, interval;
@@ -34,7 +34,7 @@ class App extends Component {
 
     this.state = {
       controls_text:'Play',
-      current_year_average_temp:null,
+      current_year_average_rainfall:null,
       interval_play:false,
       year:yearStart
     }
@@ -42,7 +42,7 @@ class App extends Component {
   componentDidMount() {
     // Get data.
     d3.json('./data/data.json').then((data) => {
-      // temperature[0].data.reduce((total, current) => total + current.value, 0) / temperature[0].data.length
+      // rainfall[0].data.reduce((total, current) => total + current.value, 0) / rainfall[0].data.length
       this.setState((state, props) => ({
         current_data:data[yearStart],
         data:data
@@ -93,7 +93,7 @@ class App extends Component {
         .style('stroke', '#fff')
         .style('stroke-width', 0.3);
     this.setPathColor();
-    this.getCurrentYearAverageTemp();
+    this.getCurrentYearAverageRainFall();
     // Wait 2 seconds before starting the interval.
     setTimeout(() => {
       this.toggleInterval(yearStart);
@@ -147,13 +147,13 @@ class App extends Component {
         });
         return (country_data[0]) ? this.value2color(country_data[0].data) : this.value2color(0);
       });
-    this.getCurrentYearAverageTemp();
+    this.getCurrentYearAverageRainFall();
   }
-  getCurrentYearAverageTemp() {
-    let temperature = this.state.current_data.reduce((total, current) => total + (current.data.reduce((country_total, country_current) => country_total + country_current.value, 0)) / current.data.length, 0) / this.state.current_data.length;
+  getCurrentYearAverageRainFall() {
+    let rainfall = this.state.current_data.reduce((total, current) => total + (current.data.reduce((country_total, country_current) => country_total + country_current.value, 0)) / current.data.length, 0) / this.state.current_data.length;
     this.setState((state, props) => ({
-      active_country_temp:temperature,
-      current_year_average_temp:temperature
+      active_country_rainfall:rainfall,
+      current_year_average_rainfall:rainfall
     }));
   }
   handleYearChange(event) {
@@ -178,7 +178,7 @@ class App extends Component {
       <div className={style.app}>
         <Div100vh>
           <div className={style.title_container}>
-            <h3>Temperature anomalies</h3>
+            <h3>Rainfall anomalies</h3>
             <div className={style.info_container}>
               <div>Data: <a href="https://climateknowledgeportal.worldbank.org/download-data">World Bank</a></div>
               <div>Author: <a href="https://twitter.com/teelmo">Teemo Tebest</a>, EBU</div>
@@ -198,8 +198,8 @@ class App extends Component {
               // The scale on the right.
               scales.map((scale, i) => {
                 // Place the yearly marker.
-                if (this.state.current_year_average_temp !== null && this.state.current_year_average_temp > scale  && this.state.current_year_average_temp < (scale + 0.2)) {
-                  return (<div key={i} className={style.scale_container} style={{backgroundColor:'#fff'}}><div className={style.scale_text}><div className={style.year_text}>{this.state.year}</div><div>{(this.state.current_year_average_temp > 0 ? '+' : '') + this.state.current_year_average_temp.toFixed(1)}mm</div></div></div>);
+                if (this.state.current_year_average_rainfall !== null && this.state.current_year_average_rainfall > scale  && this.state.current_year_average_rainfall < (scale + 0.2)) {
+                  return (<div key={i} className={style.scale_container} style={{backgroundColor:'#fff'}}><div className={style.scale_text}><div className={style.year_text}>{this.state.year}</div><div>{(this.state.current_year_average_rainfall > 0 ? '+' : '') + this.state.current_year_average_rainfall.toFixed(1)}mm</div></div></div>);
                 }
                 // Place the zero point (disabled by css on default).
                 else if (scale > -0.1 && scale < 0.1) {
